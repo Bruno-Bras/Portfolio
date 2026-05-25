@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bruno Brás Barros | Engenharia de Dados</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #050505;
+                --surface: rgba(15, 23, 42, 0.6);
+                --neon-blue: #00f0ff;
+                --neon-purple: #7000ff;
+                --text-main: #ffffff;
+                --text-dim: #8892b0;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: var(--bg);
+                color: var(--text-main);
+                font-family: "Space Grotesk", sans-serif;
+                overflow-x: hidden;
+                background-image:
+                    radial-gradient(
+                        circle at 10% 10%,
+                        rgba(0, 240, 255, 0.05),
+                        transparent 30%
+                    ),
+                    radial-gradient(
+                        circle at 90% 90%,
+                        rgba(112, 0, 255, 0.05),
+                        transparent 30%
+                    );
+            }
+
+            .container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            header {
+                min-height: 80vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .badge {
+                display: inline-block;
+                padding: 6px 14px;
+                background: rgba(0, 240, 255, 0.1);
+                border: 1px solid rgba(0, 240, 255, 0.3);
+                border-radius: 30px;
+                color: var(--neon-blue);
+                font-size: 0.8rem;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                font-family: "Outfit", sans-serif;
+                font-size: clamp(2.5rem, 7vw, 5rem);
+                font-weight: 900;
+                line-height: 1.1;
+                margin-bottom: 20px;
+                background: linear-gradient(to right, #fff, var(--neon-blue));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .typing-container {
+                font-size: 1.3rem;
+                color: var(--text-dim);
+                margin-bottom: 30px;
+                height: 30px;
+            }
+            .typing-text::after {
+                content: "|";
+                animation: blink 1s infinite;
+                color: var(--neon-blue);
+            }
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            .section-title {
+                font-family: "Outfit", sans-serif;
+                font-size: 2rem;
+                margin-bottom: 40px;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .section-title::after {
+                content: "";
+                height: 1px;
+                flex: 1;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+
+            .card {
+                background: var(--surface);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 16px;
+                padding: 35px;
+                transition:
+                    transform 0.3s ease,
+                    border 0.3s ease;
+            }
+
+            .card:hover {
+                border: 1px solid var(--neon-blue);
+                transform: translateY(-5px);
+            }
+
+            .card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 12px;
+                color: #fff;
+            }
+            .card p {
+                color: var(--text-dim);
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+            .tag {
+                background: rgba(255, 255, 255, 0.03);
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                color: var(--neon-blue);
+                border: 1px solid rgba(0, 240, 255, 0.1);
+            }
+
+            .reveal {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.6s ease-out;
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .link-btn {
+                color: var(--neon-blue);
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="badge">Sistemas de Informação • UEA</div>
+                <h1>Bruno Brás Barros</h1>
+                <div class="typing-container">
+                    <span class="typing-text" id="typewriter"></span>
+                </div>
+                <p
+                    style="
+                        max-width: 600px;
+                        color: var(--text-dim);
+                        line-height: 1.7;
+                    "
+                >
+                    Estudante direcionando seu foco em
+                    <strong>automação e BI</strong>. Especialista em Python,
+                    SQL, Power BI e transformação de dados brutos em decisões
+                    estratégicas.
+                </p>
+            </header>
+
+            <section id="projetos">
+                <h2 class="section-title reveal">Projetos</h2>
+                <div class="grid">
+                    <div class="card reveal">
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">JSON</span>
+                        </div>
+                        <h3>Typing Chase Engine</h3>
+                        <p>
+                            Arquitetura de dados e automação de estados para
+                            games utilizando Python e Markdown dinâmico atrelado
+                            a um modelo de jogo visando o conforto visual a um
+                            público infantil.
+                        </p>
+                        <a
+                            href="https://github.com/Bruno-Bras/Typing-chase"
+                            class="link-btn"
+                            >GitHub →</a
+                        >
+                    </div>
+
+                    <div class="card reveal">
+                        <div class="tags">
+                            <span class="tag">Pandas</span>
+                            <span class="tag">BI</span>
+                        </div>
+                        <h3>Data Intelligence</h3>
+                        <p>
+                            Análise exploratória e visualização de dados focada
+                            em KPIs de negócio e eficiência operacional.
+                        </p>
+                        <a
+                            href="https://github.com/Bruno-Bras/meu-primeiro-projeto-de-analise-de-dados"
+                            class="link-btn"
+                            >GitHub →</a
+                        >
+                    </div>
+                </div>
+            </section>
+            <section id="experiencia">
+                <h2 class="section-title reveal">Voluntariado & Gestão</h2>
+                <div class="grid">
+                    <div class="card reveal">
+                        <h3>Núcleo de Inclusão UEA</h3>
+                        <p>
+                            Apoio administrativo voluntário no suporte a PCDs.
+                            Organização de fluxos por meio de relatórios detalhados
+                            e atendimento direto ao público.
+                        </p>
+                       
+                    </div>
+                    <div class="card reveal">
+                        <h3>Documentação Técnica</h3>
+                        <p>
+                            Redação de relatórios estruturados e planejamento de
+                            cronogramas para projetos acadêmicos de software,
+                            garantindo a rastreabilidade e organização do ciclo de vida do projeto.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+                <h2 class="section-title reveal">Tech Stack</h2>
+                <div class="grid">
+                    <div class="card reveal">
+                        <h4
+                            style="color: var(--neon-blue); margin-bottom: 15px"
+                        >
+                            DADOS
+                        </h4>
+                        <div class="tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Modelagem de bancos de dados</span>
+                        </div>
+                    </div>
+                    <div class="card reveal">
+                        <h4
+                            style="
+                                color: var(--neon-purple);
+                                margin-bottom: 15px;
+                            "
+                        >
+                            DEVOPS
+                        </h4>
+                        <div class="tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            // Typing Effect
+            const phrases = [
+                "Entusiasta de Dados.",
+                "Entusiasta em Automação.",
+                "Analista de BI.",
+                "Desenvolvedor Python.",
+            ];
+            let i = 0;
+            let timer;
+            function typingEffect() {
+                let word = phrases[i].split("");
+                var loopTyping = function () {
+                    if (word.length > 0) {
+                        document.getElementById("typewriter").innerHTML +=
+                            word.shift();
+                    } else {
+                        setTimeout(deletingEffect, 2000);
+                        return false;
+                    }
+                    timer = setTimeout(loopTyping, 100);
+                };
+                loopTyping();
+            }
+            function deletingEffect() {
+                let word = phrases[i].split("");
+                var loopDeleting = function () {
+                    if (word.length > 0) {
+                        word.pop();
+                        document.getElementById("typewriter").innerHTML =
+                            word.join("");
+                    } else {
+                        if (phrases.length > i + 1) {
+                            i++;
+                        } else {
+                            i = 0;
+                        }
+                        typingEffect();
+                        return false;
+                    }
+                    timer = setTimeout(loopDeleting, 50);
+                };
+                loopDeleting();
+            }
+            typingEffect();
+
+            // Scroll Reveal simples
+            const reveal = () => {
+                const elements = document.querySelectorAll(".reveal");
+                elements.forEach((el) => {
+                    if (
+                        el.getBoundingClientRect().top <
+                        window.innerHeight - 50
+                    ) {
+                        el.classList.add("active");
+                    }
+                });
+            };
+            window.addEventListener("scroll", reveal);
+            reveal();
+        </script>
+    </body>
+</html>
