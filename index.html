@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bruno Brás Barros | Engenharia de Dados</title>
+        <title>Bruno Brás Barros</title>
         <link
             href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
             rel="stylesheet"
@@ -49,10 +49,11 @@
             }
 
             header {
-                min-height: 80vh;
+                min-height: 60vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                padding-bottom: 20px;
             }
 
             .badge {
@@ -66,6 +67,7 @@
                 margin-bottom: 20px;
                 text-transform: uppercase;
                 letter-spacing: 2px;
+                align-self: flex-start;
             }
 
             h1 {
@@ -97,8 +99,14 @@
             }
 
             section {
-                padding: 60px 0;
+                padding: 40px 0;
             }
+
+            #sobre {
+                padding-top: 0;
+                margin-top: -20px;
+            }
+
             .section-title {
                 font-family: "Outfit", sans-serif;
                 font-size: 2rem;
@@ -133,6 +141,10 @@
             .card:hover {
                 border: 1px solid var(--neon-blue);
                 transform: translateY(-5px);
+            }
+
+            .card-highlight {
+                border-left: 4px solid var(--neon-blue);
             }
 
             .card h3 {
@@ -185,7 +197,10 @@
     <body>
         <div class="container">
             <header>
-                <div class="badge">Sistemas de Informação • UEA</div>
+                <div class="badge">
+                    Sistemas de Informação • UEA (precisão de conclusão:
+                    12/2028)
+                </div>
                 <h1>Bruno Brás Barros</h1>
                 <div class="typing-container">
                     <span class="typing-text" id="typewriter"></span>
@@ -200,9 +215,35 @@
                     Estudante direcionando seu foco em
                     <strong>automação e BI</strong>. Especialista em Python,
                     SQL, Power BI e transformação de dados brutos em decisões
-                    estratégicas.
+                    criativas e estratégicas. Realizando o curso de Microsoft
+                    Power BI Para Business Intelligence e Data Science em
+                    andamento pela <strong>Data Science Academy</strong>.
                 </p>
             </header>
+
+            <section id="sobre">
+                <h2 class="section-title reveal">Educação & Mindset</h2>
+                <div class="card card-highlight reveal">
+                    <h3 style="color: var(--neon-blue)">
+                        Universidade do Estado do Amazonas (UEA)
+                    </h3>
+                    <p style="font-size: 1.05rem; color: var(--text-main)">
+                        <strong
+                            >Graduação em Sistemas de Informação (Previsão:
+                            Dezembro de 2028)</strong
+                        >
+                    </p>
+                    <p style="margin-bottom: 0">
+                        Sou movido pela <strong>criatividade</strong> e pela
+                        busca constante de soluções. Acredito que a tecnologia é
+                        a melhor ferramenta para resolver problemas reais.
+                        Diante de desafios complexos, costumo ter sempre
+                        soluções em mente, analisando cenários por diferentes
+                        ângulos para arquitetar sistemas que não sejam apenas
+                        funcionais, mas eficientes, escaláveis e fora da caixa.
+                    </p>
+                </div>
+            </section>
 
             <section id="projetos">
                 <h2 class="section-title reveal">Projetos</h2>
@@ -244,6 +285,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="experiencia">
                 <h2 class="section-title reveal">Voluntariado & Gestão</h2>
                 <div class="grid">
@@ -251,21 +293,22 @@
                         <h3>Núcleo de Inclusão UEA</h3>
                         <p>
                             Apoio administrativo voluntário no suporte a PCDs.
-                            Organização de fluxos por meio de relatórios detalhados
-                            e atendimento direto ao público.
+                            Organização de fluxos por meio de relatórios
+                            detalhados e atendimento direto ao público.
                         </p>
-                       
                     </div>
                     <div class="card reveal">
                         <h3>Documentação Técnica</h3>
                         <p>
                             Redação de relatórios estruturados e planejamento de
                             cronogramas para projetos acadêmicos de software,
-                            garantindo a rastreabilidade e organização do ciclo de vida do projeto.
+                            garantindo a rastreabilidade e organização do ciclo
+                            de vida do projeto.
                         </p>
                     </div>
                 </div>
             </section>
+
             <section id="skills">
                 <h2 class="section-title reveal">Tech Stack</h2>
                 <div class="grid">
@@ -279,7 +322,9 @@
                             <span class="tag">SQL</span>
                             <span class="tag">Power BI</span>
                             <span class="tag">Pandas</span>
-                            <span class="tag">Modelagem de bancos de dados</span>
+                            <span class="tag"
+                                >Modelagem de bancos de dados</span
+                            >
                         </div>
                     </div>
                     <div class="card reveal">
@@ -302,7 +347,6 @@
         </div>
 
         <script>
-            
             const phrases = [
                 "Entusiasta de Dados.",
                 "Entusiasta em Automação.",
